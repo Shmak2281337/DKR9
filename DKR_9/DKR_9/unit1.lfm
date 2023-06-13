@@ -1,0 +1,120 @@
+object fMain: TfMain
+  Left = 1050
+  Height = 464
+  Top = 92
+  Width = 671
+  BorderStyle = bsDialog
+  Caption = 'Автопарк'
+  ClientHeight = 464
+  ClientWidth = 671
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.2.6.0'
+  object ButOpenBd: TButton
+    Left = 10
+    Height = 31
+    Top = 10
+    Width = 94
+    Caption = 'Открыть БД'
+    OnClick = ButOpenBdClick
+    TabOrder = 0
+  end
+  object ButAdd: TButton
+    Left = 10
+    Height = 31
+    Top = 320
+    Width = 136
+    Caption = 'Добавить запись'
+    OnClick = ButAddClick
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 10
+    Height = 245
+    Top = 56
+    Width = 654
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object ButChange: TButton
+    Left = 168
+    Height = 31
+    Top = 320
+    Width = 136
+    Caption = 'Изменить запись'
+    OnClick = ButChangeClick
+    TabOrder = 3
+  end
+  object ButDel: TButton
+    Left = 320
+    Height = 31
+    Top = 320
+    Width = 118
+    Caption = 'Удалить запись'
+    OnClick = ButDelClick
+    TabOrder = 4
+  end
+  object ButSearch: TButton
+    Left = 168
+    Height = 31
+    Top = 424
+    Width = 110
+    Caption = 'Найти запись'
+    OnClick = ButSearchClick
+    TabOrder = 5
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 20
+    Top = 384
+    Width = 132
+    Caption = 'Поиск автомобиля'
+    ParentColor = False
+  end
+  object eSearch: TEdit
+    Left = 170
+    Height = 28
+    Top = 384
+    Width = 100
+    TabOrder = 6
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    AlwaysUseBigint = False
+    Left = 48
+    Top = 144
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Left = 77
+    Top = 144
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    Macros = <>
+    Left = 106
+    Top = 144
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 135
+    Top = 144
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    Macros = <>
+    Left = 164
+    Top = 144
+  end
+end
